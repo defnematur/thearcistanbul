@@ -7,13 +7,16 @@ export function Reveal({ children, delay = 0 }: { children: ReactNode; delay?: n
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setVisible(true);
-      return;
-    }
     const node = ref.current;
     if (!node) return;
+    // Reduced motion: reveal immediately. Defer the setState to a rAF callback
+    // so it isn't called synchronously in the effect body (cascading-render
+    // lint rule). The global reduced-motion CSS zeroes the transition, so this
+    // still appears instantly.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const id = requestAnimationFrame(() => setVisible(true));
+      return () => cancelAnimationFrame(id);
+    }
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry?.isIntersecting) {
