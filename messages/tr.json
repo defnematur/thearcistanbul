@@ -1,5 +1,5 @@
 {
-  "nav": { "home": "Ana Sayfa", "about": "Hakkımızda", "blog": "Günce", "contact": "İletişim" },
+  "nav": { "home": "Ana Sayfa", "about": "Hakkımızda", "blog": "Günce", "contact": "İletişim", "menu": "Menü", "close": "Kapat" },
   "languageToggle": { "label": "Dil", "tr": "Türkçe", "en": "English" },
   "footer": {
     "tagline": "The Arc Istanbul",
@@ -8,5 +8,12 @@
     "contact": "İletişim",
     "rights": "Tüm hakları saklıdır."
   },
-  "common": { "readMore": "Devamını oku", "loading": "Yükleniyor" }
+  "common": { "readMore": "Devamını oku", "loading": "Yükleniyor" },
+  "journal": {
+    "eyebrow": "Günce",
+    "title": "Yazılar",
+    "lede": "Çağdaş sanat, mimari ve ses üzerine; yavaş bir okuma ritmiyle.",
+    "empty": "Henüz yayımlanmış bir yazı yok.",
+    "categories": { "essay": "Deneme", "field": "Saha", "review": "İnceleme" }
+  }
 }

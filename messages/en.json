@@ -1,5 +1,5 @@
 {
-  "nav": { "home": "Home", "about": "About", "blog": "Journal", "contact": "Contact" },
+  "nav": { "home": "Home", "about": "About", "blog": "Journal", "contact": "Contact", "menu": "Menu", "close": "Close" },
   "languageToggle": { "label": "Language", "tr": "Türkçe", "en": "English" },
   "footer": {
     "tagline": "The Arc Istanbul",
@@ -8,5 +8,12 @@
     "contact": "Contact",
     "rights": "All rights reserved."
   },
-  "common": { "readMore": "Read more", "loading": "Loading" }
+  "common": { "readMore": "Read more", "loading": "Loading" },
+  "journal": {
+    "eyebrow": "Journal",
+    "title": "Writing",
+    "lede": "On contemporary art, architecture, and sound — at a slow reading pace.",
+    "empty": "No published writing yet.",
+    "categories": { "essay": "Essay", "field": "Field", "review": "Review" }
+  }
 }

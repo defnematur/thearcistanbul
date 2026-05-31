@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/routing";
 import { Container } from "./Container";
 import { LanguageToggle } from "./LanguageToggle";
+import { MobileNav } from "./MobileNav";
 
 export function Header() {
   const t = useTranslations("nav");
@@ -23,9 +24,7 @@ export function Header() {
           </Link>
           <LanguageToggle />
         </nav>
-        <div className="md:hidden">
-          <LanguageToggle />
-        </div>
+        <MobileNav />
       </Container>
     </header>
   );
