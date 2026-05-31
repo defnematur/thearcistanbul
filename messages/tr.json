@@ -30,7 +30,8 @@
     "title": "Makaleler",
     "lede": "Çağdaş sanat, mimari ve ses üzerine; yavaş bir okuma ritmiyle.",
     "empty": "Henüz yayımlanmış bir yazı yok.",
-    "categories": { "essay": "Deneme", "field": "Saha", "review": "İnceleme" }
+    "categories": { "essay": "Deneme", "field": "Saha", "review": "İnceleme" },
+    "langNote": "Bu yazının tam metni şu an yalnızca İngilizce."
   },
   "music": { "eyebrow": "Yazarken dinlenenler", "cta": "Spotify" }
 }

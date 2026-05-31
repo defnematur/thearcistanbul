@@ -30,7 +30,8 @@
     "title": "Writing",
     "lede": "On contemporary art, architecture, and sound — at a slow reading pace.",
     "empty": "No published writing yet.",
-    "categories": { "essay": "Essay", "field": "Field", "review": "Review" }
+    "categories": { "essay": "Essay", "field": "Field", "review": "Review" },
+    "langNote": ""
   },
   "music": { "eyebrow": "Listening while writing", "cta": "Spotify" }
 }

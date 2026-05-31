@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { Locale } from "@/lib/i18n/config";
+import { locales, type Locale } from "@/lib/i18n/config";
+import { articleBodies } from "./article-bodies";
 
 /**
  * Placeholder editorial articles. One shared source feeds both the home
@@ -33,6 +34,7 @@ export const placeholderArticles: PlaceholderArticle[] = [
     excerptEn: "Where intellectual conversations meet aesthetic refinement.",
     category: "field",
     date: "2024-01-15",
+    spotifyUrl: "https://open.spotify.com/track/3weNRklVDqb4Rr5MhKBR3D",
   },
   {
     slugTr: "paolo-sorrentino-kaosta-guzellik",
@@ -43,6 +45,7 @@ export const placeholderArticles: PlaceholderArticle[] = [
     excerptEn: "Into the quiet elegance of Sorrentino's world — where beauty and chaos collide.",
     category: "essay",
     date: "2024-01-08",
+    spotifyUrl: "https://open.spotify.com/track/35bfCo1peMNIjrsrMPm7Aw",
   },
   {
     slugTr: "art-nouveau-klimt-mucevher",
@@ -53,6 +56,7 @@ export const placeholderArticles: PlaceholderArticle[] = [
     excerptEn: "What connects Art Nouveau's flowing lines, Klimt's gold, and the elegance of jewelry?",
     category: "essay",
     date: "2024-01-02",
+    spotifyUrl: "https://open.spotify.com/track/1Z1DK8nlqNmV9RywT9QRCB",
   },
 ];
 
@@ -109,4 +113,22 @@ export function getArticles(locale: Locale, limit?: number): LocalizedArticle[] 
   const sorted = [...placeholderArticles].sort((a, b) => b.date.localeCompare(a.date));
   const sliced = typeof limit === "number" ? sorted.slice(0, limit) : sorted;
   return sliced.map((a) => localizeArticle(a, locale));
+}
+
+export type LocalizedArticleWithBody = LocalizedArticle & { body: string | null };
+
+/** Find one article by its locale-specific slug, with its (English) body. */
+export function getArticleBySlug(locale: Locale, slug: string): LocalizedArticleWithBody | null {
+  const found = placeholderArticles.find(
+    (a) => (locale === "tr" ? a.slugTr : a.slugEn) === slug,
+  );
+  if (!found) return null;
+  return { ...localizeArticle(found, locale), body: articleBodies[found.slugEn] ?? null };
+}
+
+/** All { locale, slug } params for static generation of detail pages. */
+export function getAllArticleParams(): { locale: Locale; slug: string }[] {
+  return locales.flatMap((locale) =>
+    placeholderArticles.map((a) => ({ locale, slug: locale === "tr" ? a.slugTr : a.slugEn })),
+  );
 }
