@@ -1,5 +1,5 @@
 {
-  "nav": { "home": "Home", "about": "About", "blog": "Journal", "contact": "Contact", "menu": "Menu", "close": "Close" },
+  "nav": { "home": "Home", "about": "About", "blog": "Journal", "gallery": "Gallery", "contact": "Contact", "menu": "Menu", "close": "Close" },
   "languageToggle": { "label": "Language", "tr": "Türkçe", "en": "English", "switch": "Switch language" },
   "footer": {
     "tagline": "The Arc Istanbul",
@@ -59,6 +59,12 @@
     "empty": "No published writing yet.",
     "categories": { "essay": "Essay", "field": "Field", "review": "Review" },
     "langNote": ""
+  },
+  "gallery": {
+    "eyebrow": "Gallery",
+    "title": "Images",
+    "lede": "A scattered archive of places, works, and moments.",
+    "empty": "No images yet."
   },
   "music": { "eyebrow": "Listening while writing", "cta": "Spotify", "play": "Play", "hide": "Hide player" }
 }

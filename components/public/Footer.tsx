@@ -17,6 +17,11 @@ export function Footer() {
           <p className="text-small uppercase tracking-wider text-fg-muted">{t("quickLinks")}</p>
           <ul className="mt-4 space-y-2 text-small">
             <li>
+              <Link href="/" className="hover:text-accent">
+                {tNav("home")}
+              </Link>
+            </li>
+            <li>
               <Link href="/about" className="hover:text-accent">
                 {tNav("about")}
               </Link>
@@ -24,6 +29,11 @@ export function Footer() {
             <li>
               <Link href="/blog" className="hover:text-accent">
                 {tNav("blog")}
+              </Link>
+            </li>
+            <li>
+              <Link href="/gallery" className="hover:text-accent">
+                {tNav("gallery")}
               </Link>
             </li>
             <li>

@@ -54,6 +54,13 @@ export function MobileNav() {
           </div>
           <nav aria-label="Mobile" className="flex flex-1 flex-col px-6 py-6">
             <Link
+              href="/"
+              onClick={close}
+              className="border-b border-rule py-5 font-serif text-h2"
+            >
+              {t("home")}
+            </Link>
+            <Link
               href="/about"
               onClick={close}
               className="border-b border-rule py-5 font-serif text-h2"
@@ -66,6 +73,13 @@ export function MobileNav() {
               className="border-b border-rule py-5 font-serif text-h2"
             >
               {t("blog")}
+            </Link>
+            <Link
+              href="/gallery"
+              onClick={close}
+              className="border-b border-rule py-5 font-serif text-h2"
+            >
+              {t("gallery")}
             </Link>
             <Link
               href="/contact"

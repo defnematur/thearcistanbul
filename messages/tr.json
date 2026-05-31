@@ -1,5 +1,5 @@
 {
-  "nav": { "home": "Ana Sayfa", "about": "Hakkımızda", "blog": "Blog", "contact": "İletişim", "menu": "Menü", "close": "Kapat" },
+  "nav": { "home": "Ana Sayfa", "about": "Hakkımızda", "blog": "Blog", "gallery": "Galeri", "contact": "İletişim", "menu": "Menü", "close": "Kapat" },
   "languageToggle": { "label": "Dil", "tr": "Türkçe", "en": "English", "switch": "Dili değiştir" },
   "footer": {
     "tagline": "The Arc Istanbul",
@@ -59,6 +59,12 @@
     "empty": "Henüz yayımlanmış bir yazı yok.",
     "categories": { "essay": "Deneme", "field": "Saha", "review": "İnceleme" },
     "langNote": "Bu yazının tam metni şu an yalnızca İngilizce."
+  },
+  "gallery": {
+    "eyebrow": "Galeri",
+    "title": "Görseller",
+    "lede": "Mekânlar, eserler ve anlardan dağınık bir arşiv.",
+    "empty": "Henüz görsel yok."
   },
   "music": { "eyebrow": "Yazarken dinlenenler", "cta": "Spotify", "play": "Dinle", "hide": "Oynatıcıyı gizle" }
 }

@@ -7,6 +7,7 @@ export const pathnames = {
   "/about": { tr: "/hakkinda", en: "/about" },
   "/blog": "/blog",
   "/blog/[slug]": "/blog/[slug]",
+  "/gallery": { tr: "/galeri", en: "/gallery" },
   "/contact": { tr: "/iletisim", en: "/contact" },
 } as const;
 
