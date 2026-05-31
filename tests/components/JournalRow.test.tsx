@@ -39,6 +39,7 @@ describe("JournalRow", () => {
             category: "essay",
             date: "2026-05-18",
             image: null,
+            spotifyUrl: null,
           }}
           categoryLabel="Essay"
           locale="en"

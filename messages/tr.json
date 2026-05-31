@@ -31,5 +31,6 @@
     "lede": "Çağdaş sanat, mimari ve ses üzerine; yavaş bir okuma ritmiyle.",
     "empty": "Henüz yayımlanmış bir yazı yok.",
     "categories": { "essay": "Deneme", "field": "Saha", "review": "İnceleme" }
-  }
+  },
+  "music": { "eyebrow": "Yazarken dinlenenler", "cta": "Spotify" }
 }

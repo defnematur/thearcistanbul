@@ -34,6 +34,7 @@ describe("ArticleCard", () => {
           category: "field",
           date: "2024-01-15",
           image: "/images/journal/sublime.jpg",
+          spotifyUrl: null,
         }}
         categoryLabel="Field"
         locale="en"

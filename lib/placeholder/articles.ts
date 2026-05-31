@@ -19,6 +19,8 @@ export type PlaceholderArticle = {
   category: ArticleCategory;
   /** ISO date (YYYY-MM-DD) — used for sorting and <time>. */
   date: string;
+  /** Optional Spotify track URL — admins set this per article. */
+  spotifyUrl?: string;
 };
 
 export const placeholderArticles: PlaceholderArticle[] = [
@@ -86,6 +88,8 @@ export type LocalizedArticle = {
   date: string;
   /** Public path to a cover image, or null when none has been provided yet. */
   image: string | null;
+  /** Spotify track URL for the article's music card, or null. */
+  spotifyUrl: string | null;
 };
 
 export function localizeArticle(article: PlaceholderArticle, locale: Locale): LocalizedArticle {
@@ -96,6 +100,7 @@ export function localizeArticle(article: PlaceholderArticle, locale: Locale): Lo
     category: article.category,
     date: article.date,
     image: resolveArticleImage(article.slugEn),
+    spotifyUrl: article.spotifyUrl ?? null,
   };
 }
 
