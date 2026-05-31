@@ -33,6 +33,7 @@ export function Reveal({ children, delay = 0 }: { children: ReactNode; delay?: n
   return (
     <div
       ref={ref}
+      data-reveal
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(12px)",

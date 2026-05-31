@@ -9,6 +9,22 @@
     "rights": "All rights reserved."
   },
   "common": { "readMore": "Read more", "loading": "Loading" },
+  "home": {
+    "heroEyebrow": "Editorial Journal",
+    "heroTitle": "Quiet conversations on art, design, and the sublime.",
+    "heroBody": "An editorial project from Istanbul — slow readings on art, cinema, architecture, and the beauty in between.",
+    "recentEyebrow": "Recent writing",
+    "recentAll": "All writing",
+    "behindEyebrow": "How an issue comes together",
+    "behind": {
+      "one": { "title": "Research", "body": "Each piece begins in a long reading list." },
+      "two": { "title": "Field", "body": "Impressions from studios, museums, and openings." },
+      "three": { "title": "Composition", "body": "Writing, image, and sound — one piece." }
+    },
+    "aboutEyebrow": "About",
+    "aboutLine": "An editorial project on art, design, and the spaces between.",
+    "aboutMore": "Read more"
+  },
   "journal": {
     "eyebrow": "Journal",
     "title": "Writing",

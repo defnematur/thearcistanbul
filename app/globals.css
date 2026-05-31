@@ -92,3 +92,12 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* No-JS fallback: reveal-on-scroll elements never run their observer, so make
+   sure their content is fully visible rather than stuck at opacity 0. */
+@media (scripting: none) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

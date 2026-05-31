@@ -9,6 +9,22 @@
     "rights": "Tüm hakları saklıdır."
   },
   "common": { "readMore": "Devamını oku", "loading": "Yükleniyor" },
+  "home": {
+    "heroEyebrow": "Editoryal Günce",
+    "heroTitle": "Sanat, tasarım ve yüce üzerine sakin sohbetler.",
+    "heroBody": "İstanbul'dan bir editoryal proje — sanat, sinema, mimari ve aradaki güzellik üzerine yavaş okumalar.",
+    "recentEyebrow": "Son yazılar",
+    "recentAll": "Tüm yazılar",
+    "behindEyebrow": "Bir sayı nasıl hazırlanır",
+    "behind": {
+      "one": { "title": "Araştırma", "body": "Her yazı uzun bir okuma listesinden doğar." },
+      "two": { "title": "Saha", "body": "Atölyelerden, müzelerden ve açılışlardan izlenimler." },
+      "three": { "title": "Düzen", "body": "Yazı, görsel ve ses; tek bir kompozisyonda." }
+    },
+    "aboutEyebrow": "Hakkımızda",
+    "aboutLine": "Sanat, tasarım ve aradaki boşluklar üzerine bir editoryal proje.",
+    "aboutMore": "Devamını oku"
+  },
   "journal": {
     "eyebrow": "Günce",
     "title": "Makaleler",
