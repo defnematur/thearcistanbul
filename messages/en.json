@@ -1,6 +1,6 @@
 {
   "nav": { "home": "Home", "about": "About", "blog": "Journal", "contact": "Contact", "menu": "Menu", "close": "Close" },
-  "languageToggle": { "label": "Language", "tr": "Türkçe", "en": "English" },
+  "languageToggle": { "label": "Language", "tr": "Türkçe", "en": "English", "switch": "Switch language" },
   "footer": {
     "tagline": "The Arc Istanbul",
     "quickLinks": "Links",
@@ -25,13 +25,40 @@
     "aboutLine": "An editorial project on art, design, and the spaces between.",
     "aboutMore": "Read more"
   },
+  "about": {
+    "eyebrow": "About",
+    "title": "An editorial project",
+    "lede": "The Arc Istanbul gathers contemporary art, architecture, and cinema at a slow reading pace.",
+    "body1": "We write as observers up close, not as visitors. When covering a show, we prefer to speak with the artist; when describing a space, we visit more than once.",
+    "body2": "The site is published in two languages — Turkish and English. Each piece arrives with an optional track chosen by the writer."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Get in touch",
+    "lede": "For exhibition tips, collaborations, or just to say hello.",
+    "email": "hello@thearcistanbul.com",
+    "address": { "city": "Istanbul", "country": "Türkiye" },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send",
+      "sending": "Sending…",
+      "success": "Your message is on its way. Thank you.",
+      "error": "Please check the fields and try again.",
+      "required": "Required",
+      "invalidEmail": "Enter a valid email",
+      "tooShort": "A little longer, please"
+    }
+  },
   "journal": {
     "eyebrow": "Journal",
-    "title": "Writing",
+    "title": "Articles",
     "lede": "On contemporary art, architecture, and sound — at a slow reading pace.",
     "empty": "No published writing yet.",
     "categories": { "essay": "Essay", "field": "Field", "review": "Review" },
     "langNote": ""
   },
-  "music": { "eyebrow": "Listening while writing", "cta": "Spotify" }
+  "music": { "eyebrow": "Listening while writing", "cta": "Spotify", "play": "Play", "hide": "Hide player" }
 }

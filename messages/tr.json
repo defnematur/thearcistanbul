@@ -1,6 +1,6 @@
 {
-  "nav": { "home": "Ana Sayfa", "about": "Hakkımızda", "blog": "Günce", "contact": "İletişim", "menu": "Menü", "close": "Kapat" },
-  "languageToggle": { "label": "Dil", "tr": "Türkçe", "en": "English" },
+  "nav": { "home": "Ana Sayfa", "about": "Hakkımızda", "blog": "Blog", "contact": "İletişim", "menu": "Menü", "close": "Kapat" },
+  "languageToggle": { "label": "Dil", "tr": "Türkçe", "en": "English", "switch": "Dili değiştir" },
   "footer": {
     "tagline": "The Arc Istanbul",
     "quickLinks": "Bağlantılar",
@@ -25,13 +25,40 @@
     "aboutLine": "Sanat, tasarım ve aradaki boşluklar üzerine bir editoryal proje.",
     "aboutMore": "Devamını oku"
   },
+  "about": {
+    "eyebrow": "Hakkımızda",
+    "title": "Bir editoryal proje",
+    "lede": "The Arc Istanbul; çağdaş sanat, mimari ve sinemayı yavaş bir okuma ritmiyle bir araya getirir.",
+    "body1": "Yazılarımızı ziyaretçi gözüyle değil, yakın bir bakışla yazarız. Bir sergiyi yorumlarken sanatçıyla konuşmayı, bir mekânı anlatırken oraya birkaç kez dönmeyi tercih ederiz.",
+    "body2": "Site iki dilde yayımlanır: Türkçe ve İngilizce. Her yazı, varsa yazarın seçtiği bir parçayla birlikte sunulur."
+  },
+  "contact": {
+    "eyebrow": "İletişim",
+    "title": "Bize yazın",
+    "lede": "Sergi önerileri, iş birlikleri ya da sadece merhaba demek için.",
+    "email": "hello@thearcistanbul.com",
+    "address": { "city": "İstanbul", "country": "Türkiye" },
+    "form": {
+      "name": "Ad",
+      "email": "E-posta",
+      "subject": "Konu",
+      "message": "Mesaj",
+      "send": "Gönder",
+      "sending": "Gönderiliyor…",
+      "success": "Mesajınız iletildi. Teşekkürler.",
+      "error": "Lütfen alanları kontrol edip tekrar deneyin.",
+      "required": "Zorunlu",
+      "invalidEmail": "Geçerli bir e-posta girin",
+      "tooShort": "Biraz daha uzun olsun"
+    }
+  },
   "journal": {
-    "eyebrow": "Günce",
+    "eyebrow": "Blog",
     "title": "Makaleler",
     "lede": "Çağdaş sanat, mimari ve ses üzerine; yavaş bir okuma ritmiyle.",
     "empty": "Henüz yayımlanmış bir yazı yok.",
     "categories": { "essay": "Deneme", "field": "Saha", "review": "İnceleme" },
     "langNote": "Bu yazının tam metni şu an yalnızca İngilizce."
   },
-  "music": { "eyebrow": "Yazarken dinlenenler", "cta": "Spotify" }
+  "music": { "eyebrow": "Yazarken dinlenenler", "cta": "Spotify", "play": "Dinle", "hide": "Oynatıcıyı gizle" }
 }

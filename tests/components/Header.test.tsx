@@ -45,8 +45,9 @@ describe("Header", () => {
     // dotted-capital case-folding issues (İletişim).
     const nav = screen.getByRole("navigation", { name: "Primary" });
     expect(within(nav).getByRole("link", { name: "Hakkımızda" })).toBeInTheDocument();
-    expect(within(nav).getByRole("link", { name: "Günce" })).toBeInTheDocument();
+    expect(within(nav).getByRole("link", { name: "Blog" })).toBeInTheDocument();
     expect(within(nav).getByRole("link", { name: "İletişim" })).toBeInTheDocument();
-    expect(within(nav).getByRole("link", { name: "Türkçe" })).toBeInTheDocument();
+    // Single language toggle (shows current locale, links to the other).
+    expect(within(nav).getByRole("link", { name: /dili değiştir/i })).toBeInTheDocument();
   });
 });

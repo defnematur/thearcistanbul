@@ -60,7 +60,12 @@ export default async function ArticlePage({
           </span>
           <time dateTime={article.date}>{dateLabel}</time>
         </div>
-        <h1 className="mt-5 font-serif text-display">{article.title}</h1>
+        {article.spotifyUrl ? (
+          <div className="mt-8">
+            <SpotifyTrackCard url={article.spotifyUrl} eyebrow={tm("eyebrow")} />
+          </div>
+        ) : null}
+        <h1 className="mt-8 font-serif text-display">{article.title}</h1>
         {article.excerpt ? (
           <p className="mt-6 font-serif text-h3 text-fg-muted">{article.excerpt}</p>
         ) : null}
@@ -68,23 +73,20 @@ export default async function ArticlePage({
 
       {article.image ? (
         <Container width="editorial" className="mt-12 md:mt-16">
-          <div className="relative aspect-[3/2] w-full overflow-hidden bg-accent-soft">
+          <div className="relative mx-auto aspect-[3/2] max-h-[62vh] w-full overflow-hidden">
             <Image
               src={article.image}
               alt={article.title}
               fill
               priority
               sizes="(min-width: 960px) 960px, 100vw"
-              className="object-cover"
+              className="object-contain"
             />
           </div>
         </Container>
       ) : null}
 
       <Container width="prose" className="mt-12 md:mt-16">
-        {/* Music card at the top of the post, below the title/cover (CLAUDE.md §4.3). */}
-        <SpotifyTrackCard url={article.spotifyUrl} eyebrow={tm("eyebrow")} ctaLabel={tm("cta")} />
-
         {article.body ? (
           <div className="mt-12 pb-8">
             {langNote ? <p className="mb-8 text-small italic text-fg-muted">{langNote}</p> : null}

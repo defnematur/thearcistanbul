@@ -10,15 +10,14 @@ vi.mock("next/navigation", () => ({
 }));
 
 describe("LanguageToggle", () => {
-  it("renders both locale labels and marks current locale active", () => {
+  it("shows the current locale and links to the other locale's equivalent path", () => {
     render(
       <NextIntlClientProvider locale="en" messages={messagesEn}>
         <LanguageToggle />
       </NextIntlClientProvider>,
     );
-    const en = screen.getByRole("link", { name: /english/i });
-    const tr = screen.getByRole("link", { name: /türkçe/i });
-    expect(en).toHaveAttribute("aria-current", "page");
-    expect(tr).not.toHaveAttribute("aria-current");
+    const link = screen.getByRole("link");
+    expect(link).toHaveTextContent(/en/i);
+    expect(link).toHaveAttribute("href", "/tr/blog");
   });
 });

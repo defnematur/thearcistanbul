@@ -1,36 +1,34 @@
-import { parseSpotifyUrl, getTrackMeta } from "@/lib/spotify";
-import { MusicCard } from "./MusicCard";
+import { parseSpotifyUrl } from "@/lib/spotify";
 
 /**
- * Server wrapper: parses a Spotify track URL, fetches metadata (client-
- * credentials), and renders the museum MusicCard. Renders nothing if the URL is
- * absent/invalid or metadata is unavailable (e.g. credentials not configured).
+ * Renders Spotify's official embed player for a track/playlist URL, framed with
+ * a small editorial label. The embed plays in-page (30s preview, or the full
+ * track for visitors logged into Spotify). Renders nothing for an absent/invalid
+ * URL. No Web API call needed — the embed carries its own artwork/metadata.
  */
-export async function SpotifyTrackCard({
-  url,
-  eyebrow,
-  ctaLabel,
-}: {
-  url: string | null;
-  eyebrow: string;
-  ctaLabel: string;
-}) {
+export function SpotifyTrackCard({ url, eyebrow }: { url: string | null; eyebrow: string }) {
   if (!url) return null;
   const parsed = parseSpotifyUrl(url);
-  if (!parsed || parsed.kind !== "track") return null;
+  if (!parsed) return null;
 
-  const meta = await getTrackMeta(parsed.id);
-  if (!meta) return null;
+  const src = `https://open.spotify.com/embed/${parsed.kind}/${parsed.id}`;
+  const height = parsed.kind === "track" || parsed.kind === "episode" ? 152 : 352;
 
   return (
-    <MusicCard
-      eyebrow={eyebrow}
-      title={meta.title}
-      artist={meta.artist}
-      durationLabel={meta.durationLabel}
-      artworkUrl={meta.artworkUrl}
-      spotifyUrl={meta.spotifyUrl}
-      ctaLabel={ctaLabel}
-    />
+    <figure className="overflow-hidden">
+      <figcaption className="mb-3 text-small uppercase tracking-[0.16em] text-fg-muted">
+        {eyebrow}
+      </figcaption>
+      <iframe
+        src={src}
+        width="100%"
+        height={height}
+        allow="autoplay; encrypted-media; clipboard-write; fullscreen; picture-in-picture"
+        loading="lazy"
+        title="Spotify"
+        className="block rounded-xl"
+        style={{ border: 0 }}
+      />
+    </figure>
   );
 }

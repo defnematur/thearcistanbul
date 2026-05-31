@@ -9,6 +9,7 @@ export function LanguageToggle() {
   const pathname = usePathname();
   const t = useTranslations("languageToggle");
   const current = params.locale;
+  const other = locales.find((loc) => loc !== current) ?? current;
 
   function swap(target: Locale) {
     if (!pathname) return `/${target}`;
@@ -17,24 +18,16 @@ export function LanguageToggle() {
     return segments.join("/") || `/${target}`;
   }
 
+  // Single toggle: shows the current locale code (e.g. EN); clicking switches
+  // to the other locale (then it reads TR), and vice versa.
   return (
-    <div aria-label={t("label")} className="flex items-center gap-3 text-small">
-      {locales.map((loc, i) => (
-        <span key={loc} className="flex items-center gap-3">
-          {i > 0 && (
-            <span aria-hidden className="text-rule">
-              /
-            </span>
-          )}
-          <a
-            href={swap(loc)}
-            aria-current={loc === current ? "page" : undefined}
-            className={loc === current ? "text-fg" : "text-fg-muted hover:text-fg"}
-          >
-            {t(loc)}
-          </a>
-        </span>
-      ))}
-    </div>
+    <a
+      href={swap(other)}
+      aria-label={`${t("switch")} — ${t(other)}`}
+      title={`${t("switch")} — ${t(other)}`}
+      className="text-small uppercase tracking-[0.12em] text-fg transition-colors hover:text-accent"
+    >
+      {current}
+    </a>
   );
 }
