@@ -8,6 +8,8 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: ["./tests/setup.ts"],
     globals: false,
+    // Unit tests use *.test.tsx; Playwright e2e specs (*.spec.ts) are excluded.
+    include: ["tests/**/*.test.{ts,tsx}"],
   },
   resolve: {
     alias: { "@": path.resolve(import.meta.dirname, ".") },
