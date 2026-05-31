@@ -22,17 +22,23 @@ vi.mock("@/lib/i18n/routing", () => ({
   ),
 }));
 
+// Render next/image as a plain img in tests.
+vi.mock("next/image", () => ({
+  default: ({ src, alt }: { src: string; alt: string }) => <img src={src} alt={alt} />,
+}));
+
 describe("JournalRow", () => {
-  it("renders title, category and formatted date, linking to the slug", () => {
+  it("renders title, category, formatted date and excerpt, linking to the slug", () => {
     render(
       <ul>
         <JournalRow
           article={{
             slug: "on-colour-and-concrete",
             title: "On colour and concrete",
-            excerpt: "x",
+            excerpt: "A short excerpt.",
             category: "essay",
             date: "2026-05-18",
+            image: null,
           }}
           categoryLabel="Essay"
           locale="en"
@@ -44,5 +50,6 @@ describe("JournalRow", () => {
     expect(within(link).getByText("On colour and concrete")).toBeInTheDocument();
     expect(within(link).getByText("Essay")).toBeInTheDocument();
     expect(within(link).getByText(/May.*2026/)).toBeInTheDocument();
+    expect(within(link).getByText("A short excerpt.")).toBeInTheDocument();
   });
 });

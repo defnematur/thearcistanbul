@@ -11,7 +11,7 @@
   "common": { "readMore": "Devamını oku", "loading": "Yükleniyor" },
   "journal": {
     "eyebrow": "Günce",
-    "title": "Yazılar",
+    "title": "Makaleler",
     "lede": "Çağdaş sanat, mimari ve ses üzerine; yavaş bir okuma ritmiyle.",
     "empty": "Henüz yayımlanmış bir yazı yok.",
     "categories": { "essay": "Deneme", "field": "Saha", "review": "İnceleme" }
