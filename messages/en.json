@@ -1,0 +1,12 @@
+{
+  "nav": { "home": "Home", "about": "About", "blog": "Journal", "contact": "Contact" },
+  "languageToggle": { "label": "Language", "tr": "Türkçe", "en": "English" },
+  "footer": {
+    "tagline": "The Arc Istanbul",
+    "quickLinks": "Links",
+    "policies": "Policies",
+    "contact": "Contact",
+    "rights": "All rights reserved."
+  },
+  "common": { "readMore": "Read more", "loading": "Loading" }
+}

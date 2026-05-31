@@ -1,0 +1,12 @@
+{
+  "nav": { "home": "Ana Sayfa", "about": "Hakkımızda", "blog": "Günce", "contact": "İletişim" },
+  "languageToggle": { "label": "Dil", "tr": "Türkçe", "en": "English" },
+  "footer": {
+    "tagline": "The Arc Istanbul",
+    "quickLinks": "Bağlantılar",
+    "policies": "Politikalar",
+    "contact": "İletişim",
+    "rights": "Tüm hakları saklıdır."
+  },
+  "common": { "readMore": "Devamını oku", "loading": "Yükleniyor" }
+}
