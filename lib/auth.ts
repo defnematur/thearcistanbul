@@ -1,6 +1,7 @@
-import NextAuth, { type DefaultSession } from "next-auth";
+import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { z } from "zod";
+import { authConfig } from "@/lib/auth.config";
 import { verifyCredentials } from "@/lib/db/queries/users";
 import { recordAttempt, recentFailureCount } from "@/lib/db/queries/loginAttempts";
 import { loginEmailLimiter, loginIpLimiter } from "@/lib/rate-limit";
@@ -38,8 +39,7 @@ export async function authorizeCredentials(raw: unknown) {
 }
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  session: { strategy: "jwt", maxAge: 7 * 24 * 60 * 60 },
-  pages: { signIn: "/admin/login" },
+  ...authConfig,
   providers: [
     Credentials({
       credentials: {
@@ -50,25 +50,4 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       authorize: authorizeCredentials,
     }),
   ],
-  callbacks: {
-    jwt: ({ token, user }) => {
-      if (user) {
-        token.uid = user.id;
-        token.email = user.email;
-        token.name = user.name;
-      }
-      return token;
-    },
-    session: ({ session, token }) => {
-      if (token.uid) session.user = { ...session.user, id: token.uid as string };
-      return session;
-    },
-  },
-  trustHost: true,
 });
-
-declare module "next-auth" {
-  interface Session {
-    user: { id: string } & DefaultSession["user"];
-  }
-}
