@@ -7,6 +7,7 @@ import {
   index,
   uniqueIndex,
   varchar,
+  check,
 } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
 
@@ -53,6 +54,7 @@ export const posts = pgTable(
     index("posts_not_deleted_idx")
       .on(t.publishedAt)
       .where(sql`deleted_at IS NULL`),
+    check("posts_status_check", sql`${t.status} in ('draft', 'published')`),
   ],
 );
 
