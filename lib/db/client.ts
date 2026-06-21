@@ -3,7 +3,6 @@ import { drizzle } from "drizzle-orm/neon-http";
 import * as schema from "./schema";
 
 declare global {
-  // eslint-disable-next-line no-var
   var __dbClient: ReturnType<typeof createClient> | undefined;
 }
 
