@@ -1,0 +1,1 @@
+ALTER TABLE "posts" ADD CONSTRAINT "posts_status_check" CHECK ("posts"."status" in ('draft', 'published'));
