@@ -7,10 +7,6 @@ vi.mock("@/lib/db/queries/loginAttempts", () => ({
   recordAttempt: vi.fn(),
   recentFailureCount: vi.fn().mockResolvedValue({ email: 0, ip: 0 }),
 }));
-vi.mock("@/lib/rate-limit", () => ({
-  loginEmailLimiter: { limit: vi.fn().mockResolvedValue({ success: true }) },
-  loginIpLimiter: { limit: vi.fn().mockResolvedValue({ success: true }) },
-}));
 
 import { authorizeCredentials } from "@/lib/auth-credentials";
 import { verifyCredentials } from "@/lib/db/queries/users";

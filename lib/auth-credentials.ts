@@ -1,7 +1,6 @@
 import { z } from "zod";
 import { verifyCredentials } from "@/lib/db/queries/users";
 import { recordAttempt, recentFailureCount } from "@/lib/db/queries/loginAttempts";
-import { loginEmailLimiter, loginIpLimiter } from "@/lib/rate-limit";
 
 // The Credentials `authorize` logic lives here, free of any `next-auth` import,
 // so it can be unit-tested without loading the Auth.js runtime (which pulls in
@@ -17,15 +16,8 @@ export async function authorizeCredentials(raw: unknown) {
   if (!parsed.success) return null;
   const { email, password, ip } = parsed.data;
 
-  const [emailRl, ipRl] = await Promise.all([
-    loginEmailLimiter.limit(email.toLowerCase()),
-    loginIpLimiter.limit(ip),
-  ]);
-  if (!emailRl.success || !ipRl.success) {
-    await recordAttempt(email, ip, false);
-    return null;
-  }
-
+  // Rate limiting is enforced via the Postgres `login_attempts` table: count
+  // recent failures per email and per IP over the last 15 minutes.
   const dbCounts = await recentFailureCount(email, ip);
   if (dbCounts.email >= 5 || dbCounts.ip >= 20) {
     await recordAttempt(email, ip, false);
